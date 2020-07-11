@@ -229,6 +229,8 @@ MonoBehaviour:
   anim: {fileID: 203000761}
   ninjaRB: {fileID: 203000764}
   isUpsideDown: 0
+  tempMin: 2
+  tempMax: 15
 --- !u!1 &351166141
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +465,10 @@ Prefab:
       propertyPath: velocidade
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 1482083182095336, guid: fc4b464cdc375bb44a470b4917c8cc2b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc4b464cdc375bb44a470b4917c8cc2b, type: 2}
   m_IsPrefabParent: 0
@@ -510,6 +516,10 @@ Prefab:
       propertyPath: velocidade
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1482083182095336, guid: fc4b464cdc375bb44a470b4917c8cc2b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc4b464cdc375bb44a470b4917c8cc2b, type: 2}
   m_IsPrefabParent: 0
@@ -543,6 +553,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tetoPrefab: {fileID: 1689720463796630, guid: 6e971acc850b44a47aecc5818ade3f44, type: 2}
   spawnPos: {x: 30, y: 4}
+  startDelay: 2
+  repeatRate: 5
 --- !u!114 &1174888824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +568,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaoPrefab: {fileID: 1003568428768234, guid: e35d8774af4a0794191f0b4cc1e8b352, type: 2}
   spawnPos: {x: 30, y: -6}
+  startDelay: 2
+  repeatRate: 5
+  heroi_move_script: {fileID: 0}
 --- !u!4 &1174888825
 Transform:
   m_ObjectHideFlags: 0
@@ -608,25 +623,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: spawnPos.y
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 61034303476000356, guid: e35d8774af4a0794191f0b4cc1e8b352,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -0.026494823
-      objectReference: {fileID: 0}
-    - target: {fileID: 61034303476000356, guid: e35d8774af4a0794191f0b4cc1e8b352,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 3.9470108
-      objectReference: {fileID: 0}
-    - target: {fileID: 61034303476000356, guid: e35d8774af4a0794191f0b4cc1e8b352,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e35d8774af4a0794191f0b4cc1e8b352, type: 2}
   m_IsPrefabParent: 0
@@ -678,6 +674,10 @@ Prefab:
       propertyPath: velocidade
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 1482083182095336, guid: fc4b464cdc375bb44a470b4917c8cc2b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc4b464cdc375bb44a470b4917c8cc2b, type: 2}
   m_IsPrefabParent: 0
@@ -723,6 +723,10 @@ Prefab:
     - target: {fileID: 1689720463796630, guid: 6e971acc850b44a47aecc5818ade3f44, type: 2}
       propertyPath: m_TagString
       value: chao
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680002399448920, guid: 6e971acc850b44a47aecc5818ade3f44, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e971acc850b44a47aecc5818ade3f44, type: 2}

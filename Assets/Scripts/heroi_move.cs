@@ -15,40 +15,31 @@ public class heroi_move : MonoBehaviour {
 	public bool isUpsideDown = false;
 	//deal with time 
 	float timer = 0.0f; //in secs
-	public float nextActionTime = 10.0f;
+	private float nextActionTime;
+
+	public float tempMin = 0.0f;
+	public float tempMax = 2.0f;
   
 	void Start () {
 		heroiT.GetComponent<Transform> ();
 		ninjaRB.GetComponent<Rigidbody2D> ();
+
+		nextActionTime = 2;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//upsideDown ();
 		timer += Time.deltaTime;
-		if (timer >= nextActionTime && tocandoChao) {
+		if (timer >= nextActionTime) {
 			upsideDown ();
 			timer = 0;
-			nextActionTime = Random.Range(0.0f, 25.0f);
+			nextActionTime = Random.Range(tempMin, tempMax);
 		}
-
-		if (tocandoChao) {
-			if (isUpsideDown) {
-				transform.Translate (new Vector2 (-vel * Time.deltaTime, 0));
-				anim.SetBool ("andar", true);
-				anim.SetBool ("idle", false);
-			} else {
-				transform.Translate (new Vector2 (vel * Time.deltaTime, 0));
-				anim.SetBool ("andar", true);
-				anim.SetBool ("idle", false);
-			}	
-		} else {
-			anim.SetBool ("andar", false);
-			anim.SetBool ("idle", true);
-		}
+			
     }
 
 	void upsideDown(){
-		transform.Translate (new Vector2 (0, 0));
 		ninjaRB.gravityScale = ninjaRB.gravityScale* -1;
 		transform.Rotate (new Vector3 (0, 0, 180));
 		isUpsideDown = !isUpsideDown;
