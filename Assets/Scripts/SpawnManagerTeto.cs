@@ -5,8 +5,8 @@ public class SpawnManagerTeto : MonoBehaviour
 {
     public GameObject tetoPrefab; // Pegar o prefab do terreno
     public Vector2 spawnPos = new Vector2(30, 4); // Posi��o que o teto vai aparecer
-    public float startDelay = 2.0f; // Tempo em segundos at� que o teto comece a aparecer
-    public float repeatRate = 5.0f; // Tempo em segundos para o teto ser spwanado de novo
+	private float startDelay = 2.0f; // Tempo em segundos at� que o teto comece a aparecer
+    private float repeatRate = 5.0f; // Tempo em segundos para o teto ser spwanado de novo
     private heroi_move heroi_move_script;
     // Start is called before the first frame update
 

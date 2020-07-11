@@ -31,14 +31,15 @@ public class heroi_move : MonoBehaviour {
 	//tempo pra troca de gravidade
 	public float trocarGravidadePalvra;
 	public float trocarGravidadeAleatorio;
-	public float tempMin = 0.0f;
-	public float tempMax = 2.0f;
+	private float tempMin = 2.0f;
+	private float tempMax = 5.0f;
   
 	void Start () {
 		heroiT.GetComponent<Transform> ();
+		//escala = heroiT.localScale;
 		ninjaRB.GetComponent<Rigidbody2D> ();
-		nextActionTime = 2;
-		trocarGravidadeAleatorio = 10.0f;
+		nextActionTime =  Random.Range(tempMin, tempMax);;
+		trocarGravidadeAleatorio =  Random.Range(tempMin, tempMax);
 		palavras = new string[] {"lua", "espaco", "astronauta","espaço sideral", "céu","firmamento","abóbada celeste","infinito","empíreo",
 			"uranograma","mundo","horizonte","universo","alturas","manto","estrelado","nadir","azimute"};
 	}
@@ -83,7 +84,7 @@ public class heroi_move : MonoBehaviour {
 		nextActionTime = Random.Range(tempMin, tempMax);
 		escrever = false;
 
-		//trocar gravidade aleatoriamente
+		//trocar gravidade dps de responder palavra
 
 		trocarGravidadePalvra = Random.Range(0.0f, 1.0f);
 		if (trocarGravidadePalvra >= 0.5f) {
