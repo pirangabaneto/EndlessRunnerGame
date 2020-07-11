@@ -30,6 +30,7 @@ public class heroi_move : MonoBehaviour {
 			timer = 0;
 			nextActionTime = Random.Range(0.0f, 25.0f);
 		}
+
 		if (tocandoChao) {
 			if (isUpsideDown) {
 				transform.Translate (new Vector2 (-vel * Time.deltaTime, 0));

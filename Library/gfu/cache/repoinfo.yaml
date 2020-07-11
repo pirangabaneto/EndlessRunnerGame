@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-07-11T13:02:41.346-03:00
-  initializedAtString: 2020-07-11T13:02:41.346-03:00
+  lastUpdatedAtString: 2020-07-11T17:42:10.469-03:00
+  initializedAtString: 2020-07-11T17:42:06.488-03:00
   currentGitRemote:
     name: origin
-    url: https://github.com/davidbr1to/EndlessRunnerGame.git
+    url: https://github.com/pirangabaneto/EndlessRunnerGame.git
     login: 
     user: 
     host: 
@@ -29,9 +29,9 @@ MonoBehaviour:
     name: master
     remote:
       name: origin
-      url: https://github.com/davidbr1to/EndlessRunnerGame.git
+      url: https://github.com/pirangabaneto/EndlessRunnerGame.git
     trackingBranch: master
   currentConfigRemote:
     name: origin
-    url: https://github.com/davidbr1to/EndlessRunnerGame.git
+    url: https://github.com/pirangabaneto/EndlessRunnerGame.git
   currentHead: 
