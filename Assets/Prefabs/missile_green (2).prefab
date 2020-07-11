@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4815956776276510}
   - component: {fileID: 212802249321914262}
   - component: {fileID: 70258826348890240}
+  - component: {fileID: 114203478342072272}
   m_Layer: 0
   m_Name: missile_green (2)
   m_TagString: bala
@@ -55,6 +56,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.69, y: 3.37}
   m_Direction: 0
+--- !u!114 &114203478342072272
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1482083182095336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 732d3540c8d898f4ba85b8cb0369098a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 10
 --- !u!212 &212802249321914262
 SpriteRenderer:
   m_ObjectHideFlags: 1

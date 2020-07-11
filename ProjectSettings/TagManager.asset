@@ -8,6 +8,7 @@ TagManager:
   - chao
   - plataforma
   - bala
+  - teto
   layers:
   - Default
   - TransparentFX
