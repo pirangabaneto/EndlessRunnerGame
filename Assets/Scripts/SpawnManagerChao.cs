@@ -24,6 +24,8 @@ public class SpawnManagerChao : MonoBehaviour
 
     void SpawnObstacle()
     {
+		if (!heroi_move_script.escrever) {
             Instantiate(chaoPrefab, spawnPos, chaoPrefab.transform.rotation); //Instancia o prefab do terreno, na posi��o escolhida
-    }
+		}
+	}
 }
