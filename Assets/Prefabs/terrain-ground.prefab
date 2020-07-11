@@ -22,8 +22,7 @@ GameObject:
   - component: {fileID: 212788366593361196}
   - component: {fileID: 61034303476000356}
   - component: {fileID: 114129357196299114}
-  - component: {fileID: 114220047868968918}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: terrain-ground
   m_TagString: chao
   m_Icon: {fileID: 0}
@@ -37,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1003568428768234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18, y: -5.93, z: 0}
+  m_LocalPosition: {x: 0.18, y: -6, z: 0}
   m_LocalScale: {x: 3.1399856, y: 0.99682033, z: 0.99682033}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,9 +53,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.026494823}
   serializedVersion: 2
-  m_Size: {x: 8, y: 4}
+  m_Size: {x: 8, y: 3.9470108}
 --- !u!114 &114129357196299114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,19 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 9
---- !u!114 &114220047868968918
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1003568428768234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cba2a484fb09d34f81b239f541cbebf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaoPrefab: {fileID: 1003568428768234}
-  spawnPos: {x: 35, y: -6}
 --- !u!212 &212788366593361196
 SpriteRenderer:
   m_ObjectHideFlags: 1

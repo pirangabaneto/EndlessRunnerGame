@@ -14,7 +14,6 @@ public class heroi_move : MonoBehaviour {
 	public Rigidbody2D ninjaRB;
 	public bool isUpsideDown = false;
 
-
 	void Start () {
 		heroiT.GetComponent<Transform> ();
 		ninjaRB.GetComponent<Rigidbody2D> ();
@@ -36,8 +35,7 @@ public class heroi_move : MonoBehaviour {
 			anim.SetBool ("andar", false);
 			anim.SetBool ("idle", true);
 		}
-
-	}
+    }
 
 	void upsideDown(){
 		ninjaRB.gravityScale = ninjaRB.gravityScale* -1;
