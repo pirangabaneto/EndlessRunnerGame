@@ -55,8 +55,11 @@ public class heroi_move : MonoBehaviour {
     }
 
 	public void lendoEntrada(){
+		if (escrever) {
+
 		inputF.Select ();
 		textoNaoVisivel.text = inputF.text;
+		}
 	}
 
 	public IEnumerator readInput(){
@@ -65,7 +68,9 @@ public class heroi_move : MonoBehaviour {
 		inputF.Select ();
 
 		textoVisivel.text = palavras[Random.Range(0, palavras.Length-1)];//(Random.Range (0, 2)).ToString();//palavras [];
-		yield return new WaitForSeconds(textoVisivel.text.Length);
+		textoNaoVisivel.text = "";
+		inputF.text = "";
+		yield return new WaitForSeconds(textoVisivel.text.Length * 0.5f);
 		if (textoVisivel.text == textoNaoVisivel.text) {
 			textoVisivel.text = "Acertou mizeravi";
 		} else {
@@ -79,11 +84,11 @@ public class heroi_move : MonoBehaviour {
 		escrever = false;
 
 		//trocar gravidade aleatoriamente
-		/*
+
 		trocarGravidadePalvra = Random.Range(0.0f, 1.0f);
-		if (trocarGravidadePalvra >= 0.5) {
+		if (trocarGravidadePalvra >= 0.5f) {
 			upsideDown ();
-		}*/
+		}
 	}
 
 	void upsideDown(){

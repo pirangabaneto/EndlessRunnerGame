@@ -24,6 +24,8 @@ public class SpawnManagerTeto : MonoBehaviour
 
     void SpawnObstacle()
     {
+		if (!heroi_move_script.escrever) {
             Instantiate(tetoPrefab, spawnPos, tetoPrefab.transform.rotation); //Instancia o prefab do terreno, na posi��o escolhida
-    }
+		}
+	}
 }
