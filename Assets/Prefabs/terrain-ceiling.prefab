@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212022579310802498}
   - component: {fileID: 61495991943209650}
   - component: {fileID: 114483378068791146}
-  - component: {fileID: 114905314760286956}
   m_Layer: 0
   m_Name: terrain-ceiling
   m_TagString: chao
@@ -69,19 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 8
---- !u!114 &114905314760286956
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1689720463796630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3899bee95d17e454bb03590d8b0db067, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tetoPrefab: {fileID: 1689720463796630}
-  spawnPos: {x: 35, y: 4}
 --- !u!212 &212022579310802498
 SpriteRenderer:
   m_ObjectHideFlags: 1

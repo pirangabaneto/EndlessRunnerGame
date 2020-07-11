@@ -17,7 +17,7 @@ public class MoverEsquerda : MonoBehaviour {
 	void Update () {
             transform.Translate(Vector2.left * velocidade * Time.deltaTime);
 
-        if (transform.position.x < limite && gameObject.CompareTag("chao")) // Destroi o chão se ele estiver fora do limite da tela
+        if (transform.position.x < limite) // Destroi o chão se ele estiver fora do limite da tela
         {   
             Destroy(gameObject);
         }

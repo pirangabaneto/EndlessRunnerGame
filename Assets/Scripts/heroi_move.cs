@@ -13,12 +13,10 @@ public class heroi_move : MonoBehaviour {
 	//public bool vivo = true;
 	public Rigidbody2D ninjaRB;
 	public bool isUpsideDown = false;
-
 	//deal with time 
 	float timer = 0.0f; //in secs
 	public float nextActionTime = 10.0f;
-
-
+  
 	void Start () {
 		heroiT.GetComponent<Transform> ();
 		ninjaRB.GetComponent<Rigidbody2D> ();
@@ -46,8 +44,7 @@ public class heroi_move : MonoBehaviour {
 			anim.SetBool ("andar", false);
 			anim.SetBool ("idle", true);
 		}
-
-	}
+    }
 
 	void upsideDown(){
 		transform.Translate (new Vector2 (0, 0));
