@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +14,10 @@ public class heroi_move : MonoBehaviour {
 	public Rigidbody2D ninjaRB;
 	public bool isUpsideDown = false;
 
+	//deal with time 
+	float timer = 0.0f; //in secs
+	public float nextActionTime = 10.0f;
+
 
 	void Start () {
 		heroiT.GetComponent<Transform> ();
@@ -22,6 +26,12 @@ public class heroi_move : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		timer += Time.deltaTime;
+		if (timer >= nextActionTime && tocandoChao) {
+			upsideDown ();
+			timer = 0;
+			nextActionTime = Random.Range(0.0f, 25.0f);
+		}
 		if (tocandoChao) {
 			if (isUpsideDown) {
 				transform.Translate (new Vector2 (-vel * Time.deltaTime, 0));
@@ -40,6 +50,7 @@ public class heroi_move : MonoBehaviour {
 	}
 
 	void upsideDown(){
+		transform.Translate (new Vector2 (0, 0));
 		ninjaRB.gravityScale = ninjaRB.gravityScale* -1;
 		transform.Rotate (new Vector3 (0, 0, 180));
 		isUpsideDown = !isUpsideDown;
