@@ -20,11 +20,14 @@ public class SpawnManagerEtBilu : MonoBehaviour
 	void Update()
 	{
 		if (!heroi_move_script.isUpsideDown) {
-			spawnPos = new Vector2(0, -3);
-		}
+            //etPrefeb.transform.Rotate(0, 0, 0);
+            spawnPos = new Vector2(0, -3);
+        }
 		else{
-			spawnPos = new Vector2(0, 1);
-		}
+            spawnPos = new Vector2(0, 1);
+            etPrefeb.transform.Rotate(180, 0, 0);
+
+        }
 	}
 
 	void SpawnObstacle()

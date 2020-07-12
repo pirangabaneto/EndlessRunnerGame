@@ -55,8 +55,8 @@ public class heroi_move : MonoBehaviour {
 		ninjaRB.GetComponent<Rigidbody2D> ().gravityScale = 10f;
 		nextActionTime =  Random.Range(tempMin, tempMax);;
 		trocarGravidadeAleatorio =  Random.Range(tempMin, tempMax);
-		palavras = new string[] {"moon", "space", "astronaut","outer space", "sky","firmamento","sky dome","infinity","empire",
-			"uranus","world","horizon","universe","beyond","earth","stars","supernova","mars", "sun"};
+		palavras = new string[] {"moon", "space", "astronaut","outer space", "sky","jupiter","sky dome","infinity","empire",
+			"uranus","world","horizon","universe","beyond","earth","stars","supernova","mars", "sun", "mercury", "saturn", "pluto", "spaceship"};
         playerAudio = GetComponent<AudioSource>();
 
 		ifgo = GameObject.Find("InputField");
@@ -107,16 +107,14 @@ public class heroi_move : MonoBehaviour {
 		inputF.text = "";
 		yield return new WaitForSeconds(textoVisivel.text.Length * 0.5f);
 		if (textoVisivel.text == textoNaoVisivel.text) {
-			textoVisivel.text = "Acertou mizeravi";
 			if (encontroEt) {
-				anim.SetBool ("andar", false);
+				anim.SetBool ("andar", false);  
 				anim.SetBool ("idle", false);
 				anim.SetBool ("pular", true);
 				pular ();
 			}
             playerAudio.PlayOneShot(palavraCerta, 1.0f);
 		} else {
-			textoVisivel.text = "Errrrrrrou";
             playerAudio.PlayOneShot(palavraErrada, 1.0f);
 			//reiniciar o game
 
@@ -150,9 +148,11 @@ public class heroi_move : MonoBehaviour {
 	void Flip(){
 		face = !face;
 
-		Vector3 escala = heroiT.localScale;
-		escala.x = escala.x * -1;
-		heroiT.localScale = escala;
+        transform.Rotate(0, 180, 0);
+        //Vector2 escala = heroiT.localScale;
+		//escala.x = escala.x * -1;
+		//heroiT.localScale = escala;
+ 
 	}
 
 	void OnCollisionEnter2D(Collision2D outro){
@@ -183,7 +183,7 @@ public class heroi_move : MonoBehaviour {
 
 	//pra fazer ele pular
 	public void pular(){
-		ninjaRB.AddForce (new Vector2 (10, forca), ForceMode2D.Impulse);
+		ninjaRB.AddForce (Vector2.up * forca, ForceMode2D.Impulse);
 		pulando = true;
 	}
 }
