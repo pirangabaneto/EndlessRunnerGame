@@ -44,6 +44,7 @@ public class heroi_move : MonoBehaviour {
 		heroiT.GetComponent<Transform> ();
 		//escala = heroiT.localScale;
 		ninjaRB.GetComponent<Rigidbody2D> ();
+		ninjaRB.GetComponent<Rigidbody2D> ().gravityScale = 10f;
 		nextActionTime =  Random.Range(tempMin, tempMax);;
 		trocarGravidadeAleatorio =  Random.Range(tempMin, tempMax);
 		palavras = new string[] {"moon", "space", "astronaut","outer space", "sky","firmamento","sky dome","infinity","empire",
