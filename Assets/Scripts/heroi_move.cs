@@ -17,6 +17,11 @@ public class heroi_move : MonoBehaviour {
 	//deal with time 
 	float timer = 0.0f; //in secs
 	private float nextActionTime;
+    public AudioClip pulo;
+    public AudioClip trocaGravidade;
+    public AudioClip palavraCerta;
+    public AudioClip palavraErrada;
+    public AudioClip gameOver;
 
 
 	//Relacionado ao input de texto

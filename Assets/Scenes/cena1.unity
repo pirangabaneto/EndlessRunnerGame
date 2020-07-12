@@ -244,7 +244,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 203000760}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.61, y: 0.3566, z: 0}
+  m_LocalPosition: {x: -14, y: -3.2, z: 0}
   m_LocalScale: {x: 0.40171573, y: 0.40171573, z: 0.40171573}
   m_Children: []
   m_Father: {fileID: 0}
@@ -303,6 +303,11 @@ MonoBehaviour:
   anim: {fileID: 203000761}
   ninjaRB: {fileID: 203000764}
   isUpsideDown: 0
+  pulo: {fileID: 8300000, guid: 02a855e125cdf1e49ba5cbb84cb71aba, type: 3}
+  trocaGravidade: {fileID: 8300000, guid: 27b2943523fdfdd48afbdd9584fde9df, type: 3}
+  palavraCerta: {fileID: 8300000, guid: 6668f1ce152acbc40b6ee3a480bc0a57, type: 3}
+  palavraErrada: {fileID: 8300000, guid: 3ceb462be51cd7b49aa9964265842eb5, type: 3}
+  gameOver: {fileID: 8300000, guid: 2ac6842e8a4aed241838aad3ae0a13c8, type: 3}
   textoVisivel: {fileID: 53068643}
   textoNaoVisivel: {fileID: 1070887028}
   inputF: {fileID: 1213880720}
@@ -310,8 +315,6 @@ MonoBehaviour:
   resposta: 
   trocarGravidadePalvra: 0
   trocarGravidadeAleatorio: 0
-  tempMin: 2
-  tempMax: 15
 --- !u!1 &351166141
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,7 +378,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.9851756
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -500,14 +503,14 @@ RectTransform:
   m_GameObject: {fileID: 351166141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -3.82}
-  m_LocalScale: {x: 1.6514053, y: 1.6111276, z: 1.6111276}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.84, y: -1.02}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &564311196
@@ -574,11 +577,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4815956776276510, guid: fc4b464cdc375bb44a470b4917c8cc2b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 33.01
+      value: 40.05
       objectReference: {fileID: 0}
     - target: {fileID: 4815956776276510, guid: fc4b464cdc375bb44a470b4917c8cc2b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.55
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 4815956776276510, guid: fc4b464cdc375bb44a470b4917c8cc2b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -794,8 +797,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tetoPrefab: {fileID: 1689720463796630, guid: 6e971acc850b44a47aecc5818ade3f44, type: 2}
   spawnPos: {x: 30, y: 4}
-  startDelay: 2
-  repeatRate: 5
 --- !u!114 &1174888824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,8 +810,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaoPrefab: {fileID: 1003568428768234, guid: e35d8774af4a0794191f0b4cc1e8b352, type: 2}
   spawnPos: {x: 30, y: -6}
-  startDelay: 2
-  repeatRate: 5
   heroi_move_script: {fileID: 0}
 --- !u!4 &1174888825
 Transform:
