@@ -17,6 +17,12 @@ public class heroi_move : MonoBehaviour {
 	//deal with time 
 	float timer = 0.0f; //in secs
 	private float nextActionTime;
+    public AudioClip pulo;
+    public AudioClip trocaGravidade;
+    public AudioClip palavraCerta;
+    public AudioClip palavraErrada;
+    public AudioClip gameOver;
+    public AudioSource playerAudio;
 
 
 	//Relacionado ao input de texto
@@ -40,8 +46,9 @@ public class heroi_move : MonoBehaviour {
 		ninjaRB.GetComponent<Rigidbody2D> ();
 		nextActionTime =  Random.Range(tempMin, tempMax);;
 		trocarGravidadeAleatorio =  Random.Range(tempMin, tempMax);
-		palavras = new string[] {"lua", "espaco", "astronauta","espaço sideral", "céu","firmamento","abóbada celeste","infinito","empíreo",
-			"uranograma","mundo","horizonte","universo","alturas","manto","estrelado","nadir","azimute"};
+		palavras = new string[] {"moon", "space", "astronaut","outer space", "sky","firmamento","sky dome","infinity","empire",
+			"uranus","world","horizon","universe","beyond","earth","stars","supernova","mars", "sun"};
+        playerAudio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -74,10 +81,12 @@ public class heroi_move : MonoBehaviour {
 		yield return new WaitForSeconds(textoVisivel.text.Length * 0.5f);
 		if (textoVisivel.text == textoNaoVisivel.text) {
 			textoVisivel.text = "Acertou mizeravi";
+            playerAudio.PlayOneShot(palavraCerta, 1.0f);
 		} else {
 			textoVisivel.text = "Errrrrrrou";
+            playerAudio.PlayOneShot(palavraErrada, 1.0f);
 
-		}
+        }
 		textoNaoVisivel.text = "";
 		inputF.text = "";
 		timer = 0;
@@ -97,7 +106,8 @@ public class heroi_move : MonoBehaviour {
 		transform.Rotate (new Vector3 (0, 0, 180));
 		isUpsideDown = !isUpsideDown;
 		Flip ();
-	}
+        playerAudio.PlayOneShot(trocaGravidade, 1.0f);
+    }
 
 	void Flip(){
 		face = !face;
