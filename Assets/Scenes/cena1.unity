@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 203000766}
   - component: {fileID: 203000767}
   - component: {fileID: 203000768}
+  - component: {fileID: 203000769}
   m_Layer: 0
   m_Name: ninjaPlayer
   m_TagString: Untagged
@@ -399,6 +400,7 @@ MonoBehaviour:
   resposta: 
   trocarGravidadePalvra: 0
   trocarGravidadeAleatorio: 0
+  main_menu_script: {fileID: 0}
 --- !u!82 &203000767
 AudioSource:
   m_ObjectHideFlags: 0
@@ -493,6 +495,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.36000004, y: 0.47000006}
   m_Direction: 0
+--- !u!114 &203000769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 203000760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41288bcf2b1038f4fa64fa18e424173f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &351166141
 GameObject:
   m_ObjectHideFlags: 0

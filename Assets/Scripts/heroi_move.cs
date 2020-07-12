@@ -29,7 +29,7 @@ public class heroi_move : MonoBehaviour {
 	//Relacionado ao input de texto
 	string[] palavras;
 	private GameObject txt;
-	private Text textoVisivel, textoNaoVisivel, textoDistancia;
+	private Text textoVisivel, textoNaoVisivel, textoDistancia,textoMaiorDistancia;
 	private GameObject ifgo;
 	private InputField inputF; 
 
@@ -47,6 +47,8 @@ public class heroi_move : MonoBehaviour {
 
 	//etbilu
 	private bool encontroEt = false;
+	//reuniciar o game
+	public mainmenu main_menu_script;
   
 	void Start () {
 		heroiT.GetComponent<Transform> ();
@@ -71,6 +73,9 @@ public class heroi_move : MonoBehaviour {
 		txt = GameObject.Find ("textoDistancia");
 		textoDistancia = txt.GetComponent<Text> ();
 
+		//reinicuar o game
+		main_menu_script =  GameObject.Find("ninjaPlayer").GetComponent<mainmenu>(); 
+		//textoMaiorDistancia.text = PlayerPrefs.GetFloat ("melhorPontuacao",0).ToString ("f0");
 	}
 	
 	// Update is called once per frame
@@ -117,7 +122,14 @@ public class heroi_move : MonoBehaviour {
 		} else {
             playerAudio.PlayOneShot(palavraErrada, 1.0f);
 			//reiniciar o game
+			//reiniciar o game
+			if (encontroEt) {
+				textoVisivel.text = "ET BILU GOT YOU";
 
+				yield return new WaitForSeconds(3);
+				main_menu_script.PlayGame ();
+
+			}
 
 
 
