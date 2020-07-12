@@ -585,9 +585,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c5e2a73ad4706440f93bf05df0b465fe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6e813ad98a697e948989e943b0e3803f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.44
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -682,7 +682,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -3.82}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
-  m_Children: []
+  m_Children:
+  - {fileID: 1700706342}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1451,8 +1452,8 @@ RectTransform:
   - {fileID: 53068642}
   - {fileID: 1070887027}
   - {fileID: 752334674}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 351166149}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1519,5 +1520,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

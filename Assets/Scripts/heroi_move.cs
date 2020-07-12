@@ -185,5 +185,6 @@ public class heroi_move : MonoBehaviour {
 	public void pular(){
 		ninjaRB.AddForce (Vector2.up * forca, ForceMode2D.Impulse);
 		pulando = true;
-	}
+        playerAudio.PlayOneShot(pulo, 1.0f);
+    }
 }
