@@ -28,7 +28,7 @@ public class heroi_move : MonoBehaviour {
 	//Relacionado ao input de texto
 	string[] palavras;
 	private GameObject txt;
-	private Text textoVisivel, textoNaoVisivel;
+	private Text textoVisivel, textoNaoVisivel, textoDistancia;
 	private GameObject ifgo;
 	private InputField inputF; 
 
@@ -40,6 +40,9 @@ public class heroi_move : MonoBehaviour {
 	public float trocarGravidadeAleatorio;
 	private float tempMin = 2.0f;
 	private float tempMax = 5.0f;
+
+	//contador
+	private float distancia = 0;
   
 	void Start () {
 		heroiT.GetComponent<Transform> ();
@@ -61,11 +64,19 @@ public class heroi_move : MonoBehaviour {
 		txt = GameObject.Find ("textoNaoVisivel");
 		textoNaoVisivel = txt.GetComponent<Text> ();
 
+		txt = GameObject.Find ("textoDistancia");
+		textoDistancia = txt.GetComponent<Text> ();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//upsideDown ();
+		//calculando distancia
+		if(!escrever){
+			distancia += Time.smoothDeltaTime * 1.5f;	
+		}
+		textoDistancia.text = distancia.ToString("f0");
+
 		timer += Time.deltaTime;
 		if (timer >= nextActionTime && tocandoChao && !escrever) {
 			//pra pedir input
