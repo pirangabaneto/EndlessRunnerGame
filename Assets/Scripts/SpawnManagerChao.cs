@@ -6,7 +6,7 @@ public class SpawnManagerChao : MonoBehaviour
     public GameObject chaoPrefab; // Pegar o prefab do terreno
     public Vector2 spawnPos = new Vector2(30, -10); // Posi��o que o terreno vai aparecer
 	private float startDelay = 2.0f; // Tempo em segundos at� que o terreno comece a aparecer
-	private float repeatRate = 2.5f; // Tempo em segundos para o terreno ser spwanado de novo
+	private float repeatRate = 2.0f; // Tempo em segundos para o terreno ser spwanado de novo
     public heroi_move heroi_move_script;
     // Start is called before the first frame update
 
