@@ -8,7 +8,7 @@ public class heroi_move : MonoBehaviour {
 	public bool face = true; //facing right
 	public Transform heroiT; //to turn
 	public float vel = 5f; //to run
-	private float forca = 35.5f; //to jump
+	private float forca = 25.5f; //to jump
 	public bool pulando = false;
 	public bool tocandoChao = false; 
 	public Animator anim;
@@ -44,6 +44,9 @@ public class heroi_move : MonoBehaviour {
 
 	//contador
 	private float distancia = 0;
+
+	//etbilu
+	private bool encontroEt = false;
   
 	void Start () {
 		heroiT.GetComponent<Transform> ();
@@ -80,12 +83,7 @@ public class heroi_move : MonoBehaviour {
 
 		timer += Time.deltaTime;
 		if (timer >= nextActionTime && tocandoChao && !escrever) {
-			//teseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeste
-			pular();
 			//pra pedir input
-
-
-
 			StartCoroutine (readInput ());
 		}
     }
@@ -104,16 +102,26 @@ public class heroi_move : MonoBehaviour {
 		//definir quantos secs esperar
 		inputF.Select ();
 
-		textoVisivel.text = palavras[Random.Range(0, palavras.Length-1)];//(Random.Range (0, 2)).ToString();//palavras [];
+		textoVisivel.text = palavras[Random.Range(0, palavras.Length-1)];
 		textoNaoVisivel.text = "";
 		inputF.text = "";
 		yield return new WaitForSeconds(textoVisivel.text.Length * 0.5f);
 		if (textoVisivel.text == textoNaoVisivel.text) {
 			textoVisivel.text = "Acertou mizeravi";
+			if (encontroEt) {
+				anim.SetBool ("andar", false);
+				anim.SetBool ("idle", false);
+				anim.SetBool ("pular", true);
+				pular ();
+			}
             playerAudio.PlayOneShot(palavraCerta, 1.0f);
 		} else {
 			textoVisivel.text = "Errrrrrrou";
             playerAudio.PlayOneShot(palavraErrada, 1.0f);
+			//reiniciar o game
+
+
+
 
         }
 		textoNaoVisivel.text = "";
@@ -152,10 +160,19 @@ public class heroi_move : MonoBehaviour {
 			tocandoChao = true;
 			pulando = false;
 		}
+	}
 
-		if(outro.gameObject.CompareTag("bala")){
-			upsideDown ();
+	void OnTriggerEnter2D(Collider2D outro){
+		if (outro.gameObject.CompareTag ("etBilu")) {
+			encontroEt = true;
+			StartCoroutine (readInput ());
 		}
+	}
+	void OnTriggerExit2D(Collider2D outro){
+		encontroEt = false;
+		anim.SetBool ("andar", true);
+		anim.SetBool ("idle", false);
+		anim.SetBool ("pular", false);
 	}
 
 	void OnCollisionExit2D(Collision2D outro){
@@ -167,9 +184,6 @@ public class heroi_move : MonoBehaviour {
 	//pra fazer ele pular
 	public void pular(){
 		ninjaRB.AddForce (new Vector2 (10, forca), ForceMode2D.Impulse);
-		anim.SetBool ("andar", false);
-		anim.SetBool ("idle", false);
-		anim.SetBool ("pular", true);
 		pulando = true;
 	}
 }

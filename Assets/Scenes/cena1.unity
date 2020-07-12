@@ -384,7 +384,7 @@ MonoBehaviour:
   face: 1
   heroiT: {fileID: 203000763}
   vel: 5
-  forca: 6.5
+  pulando: 0
   tocandoChao: 0
   anim: {fileID: 203000761}
   ninjaRB: {fileID: 203000764}
@@ -1029,6 +1029,7 @@ GameObject:
   - component: {fileID: 1174888825}
   - component: {fileID: 1174888824}
   - component: {fileID: 1174888823}
+  - component: {fileID: 1174888826}
   m_Layer: 0
   m_Name: spawnManager
   m_TagString: Untagged
@@ -1076,6 +1077,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1174888826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1174888822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6b5f4fc0ab086459992701363f134c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  etPrefeb: {fileID: 1821272578366352, guid: 87957b3ae15a8154ab8514f7959211ee, type: 2}
 --- !u!1 &1213880718
 GameObject:
   m_ObjectHideFlags: 0
