@@ -17,7 +17,7 @@ public class moverDireita : MonoBehaviour {
 	void Update () {
 		if (!heroi_move_script.escrever) {
 			transform.Translate (Vector2.right * velocidade * Time.deltaTime);
-			if (transform.position.x < limite  && !heroi_move_script.tocandoChao) // Destroi o chão se ele estiver fora do limite da tela
+			if (transform.position.x < limite  && !heroi_move_script.tocandoChao && !heroi_move_script.pulando) // Destroi o chão se ele estiver fora do limite da tela
 			{
 				Destroy(gameObject);
 			}

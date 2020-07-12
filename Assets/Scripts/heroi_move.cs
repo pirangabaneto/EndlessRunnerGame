@@ -8,7 +8,8 @@ public class heroi_move : MonoBehaviour {
 	public bool face = true; //facing right
 	public Transform heroiT; //to turn
 	public float vel = 5f; //to run
-	public float forca = 6.5f; //to jump
+	private float forca = 35.5f; //to jump
+	public bool pulando = false;
 	public bool tocandoChao = false; 
 	public Animator anim;
 	//public bool vivo = true;
@@ -79,10 +80,14 @@ public class heroi_move : MonoBehaviour {
 
 		timer += Time.deltaTime;
 		if (timer >= nextActionTime && tocandoChao && !escrever) {
+			//teseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeste
+			pular();
 			//pra pedir input
+
+
+
 			StartCoroutine (readInput ());
 		}
-			
     }
 
 	public void lendoEntrada(){
@@ -94,6 +99,7 @@ public class heroi_move : MonoBehaviour {
 	}
 
 	public IEnumerator readInput(){
+		
 		escrever = true;
 		//definir quantos secs esperar
 		inputF.Select ();
@@ -126,6 +132,7 @@ public class heroi_move : MonoBehaviour {
 
 	void upsideDown(){
 		ninjaRB.gravityScale = ninjaRB.gravityScale* -1;
+		forca = forca * -1;
 		transform.Rotate (new Vector3 (0, 0, 180));
 		isUpsideDown = !isUpsideDown;
 		Flip ();
@@ -143,6 +150,7 @@ public class heroi_move : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D outro){
 		if (outro.gameObject.CompareTag ("chao")) {
 			tocandoChao = true;
+			pulando = false;
 		}
 
 		if(outro.gameObject.CompareTag("bala")){
@@ -154,5 +162,14 @@ public class heroi_move : MonoBehaviour {
 		if (outro.gameObject.CompareTag ("chao")) {
 			tocandoChao = false;
 		}
+	}
+
+	//pra fazer ele pular
+	public void pular(){
+		ninjaRB.AddForce (new Vector2 (10, forca), ForceMode2D.Impulse);
+		anim.SetBool ("andar", false);
+		anim.SetBool ("idle", false);
+		anim.SetBool ("pular", true);
+		pulando = true;
 	}
 }
