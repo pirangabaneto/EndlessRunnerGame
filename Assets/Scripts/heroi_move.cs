@@ -27,9 +27,10 @@ public class heroi_move : MonoBehaviour {
 
 	//Relacionado ao input de texto
 	string[] palavras;
-	int numChaves;
-	public Text textoVisivel, textoNaoVisivel;
-	public InputField inputF;
+	private GameObject txt;
+	private Text textoVisivel, textoNaoVisivel;
+	private GameObject ifgo;
+	private InputField inputF; 
 
 	public bool escrever = false;
 	public string resposta;
@@ -50,6 +51,16 @@ public class heroi_move : MonoBehaviour {
 		palavras = new string[] {"moon", "space", "astronaut","outer space", "sky","firmamento","sky dome","infinity","empire",
 			"uranus","world","horizon","universe","beyond","earth","stars","supernova","mars", "sun"};
         playerAudio = GetComponent<AudioSource>();
+
+		ifgo = GameObject.Find("InputField");
+		inputF = ifgo.GetComponent<InputField>();
+
+		txt = GameObject.Find ("textoVisivel");
+		textoVisivel = txt.GetComponent<Text> ();
+
+		txt = GameObject.Find ("textoNaoVisivel");
+		textoNaoVisivel = txt.GetComponent<Text> ();
+
 	}
 	
 	// Update is called once per frame
